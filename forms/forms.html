@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>form</title>
+  <style>
+    .error
+    {
+    color: red; font-size: 12px;
+    }
+    .forms
+    {
+    margin-bottom: 10px; 
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+  <form id="myForm">
+    
+    <div class="forms">
+      First Name:
+      <input type="text" id="firstName">
+      <span class="error" id="firstNameError"></span><br>
+    </div>
+
+    <div class="forms">
+      Last Name:
+      <input type="text" id="lastName">
+      <span class="error" id="lastNameError"></span><br>
+    </div>
+
+    <div class="forms">
+      User Name: 
+      <input type="text" id="userName">
+      <span class="error" id="userNameError"></span><br>
+    </div>
+
+    <div class="forms">
+      Password: 
+      <input type="password" id="password">
+      <span class="error" id="passwordError"></span><br>
+    </div>
+
+    <div class="forms">
+      Email:
+      <input type="text" id="email">
+      <span class="error" id="emailError"></span><br>
+    </div>
+
+    <div class="forms">
+      Phone:
+      <input type="text" id="phone">
+      <span class="error" id="phoneError"></span><br>
+    </div>
+
+    <div class="forms">
+      Gender:
+      <input type="radio" name="gender" value="Male" checked> Male
+      <input type="radio" name="gender" value="Female"> Female
+      <span class="error" id="genderError"></span><br>
+    </div>
+
+    <div class="forms">
+      City: 
+      <input type="text" id="city">
+      <span class="error" id="cityError"></span><br>
+    </div>
+
+    <div class="forms">
+      State:
+      <input type="text" id="state">
+      <span class="error" id="stateError"></span><br>
+    </div>
+
+    <div class="forms">
+      Date of Birth:
+      <input type="date" id="dob">
+      <span class="error" id="dobError"></span><br>
+    </div>
+
+    <div class="forms">
+      Address:
+      <input type="text" id="address">
+      <span class="error" id="addressError"></span><br>
+    </div>
+
+    <div class="forms">
+      <input type="checkbox" id="terms"> I agree to terms
+      <span class="error" id="termsError"></span><br>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
