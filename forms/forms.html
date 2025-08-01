@@ -91,5 +91,91 @@
     </div>
     <button type="submit">Submit</button>
   </form>
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      document.querySelectorAll(".error").forEach(e => e.textContent = "");
+
+      let isValid = true;
+
+      function setError(id, message)
+      {
+        document.getElementById(id).textContent = message;
+        isValid = false;
+      }
+
+      // Get input values
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName = document.getElementById("lastName").value.trim();
+      const userName = document.getElementById("userName").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const state = document.getElementById("state").value.trim();
+      const dob = document.getElementById("dob").value;
+      const address = document.getElementById("address").value.trim();
+      const termsChecked = document.getElementById("terms").checked;
+
+      // Validation rules
+      const nameRegex = /^[A-Za-z]+$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phoneRegex = /^\d{10}$/;
+
+      if (firstName=="" || !nameRegex.test(firstName)) {
+        setError("firstNameError", "Enter a valid first name (letters only).");
+      }
+
+      if (lastName=="" || !nameRegex.test(lastName)) {
+        setError("lastNameError", "Enter a valid last name (letters only).");
+      }
+
+      if (userName=="") {
+        setError("userNameError", "User name is required.");
+      }
+
+      if (password=="") {
+        setError("passwordError", "Password is required.");
+      }
+
+      if (!emailRegex.test(email)) {
+        setError("emailError", "Enter a valid email (example@mail.com).");
+      }
+
+      if (!phoneRegex.test(phone)) {
+        setError("phoneError", "Enter a 10-digit phone number.");
+      }
+
+      if (city=="") {
+        setError("cityError", "City is required.");
+      }
+
+      if (state=="") {
+        setError("stateError", "State is required.");
+      }
+
+      if (dob=="")
+      {
+        setError("dobError", "Date of birth is required.");
+      }
+
+      if (address=="")
+      {
+        setError("addressError", "Address is required.");
+      }
+
+      if (!termsChecked)
+      {
+        setError("termsError", "You must agree to the terms.");
+      }
+
+      if (isValid)
+      {
+        alert("Form submitted successfully!");
+        document.getElementById("myForm").submit();
+      }
+    });
+  </script>
 </body>
 </html>
